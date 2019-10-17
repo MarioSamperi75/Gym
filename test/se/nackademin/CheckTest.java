@@ -36,11 +36,10 @@ class CheckTest {
 
     @Test
     public void testItemIsFound() {
-        assertTrue(c1.itemIsFound("8507219173, Mario Samperi", "Mario") == true);
-        assertTrue(c1.itemIsFound("8507219173, Mario Samperi", "Ma") == true);
-        assertTrue(c1.itemIsFound("8507219173, Mario Samperi", "850721") == true);
-        assertTrue(c1.itemIsFound("3608021234, Federico Fellini", "Mario") == false);
-        assertFalse(c1.itemIsFound("3608021234, Federico Fellini", "Mario") == true);
+        assertTrue(c1.itemIsFound("8507219173, Mario Samperi", "Mario"));
+        assertTrue(c1.itemIsFound("8507219173, Mario Samperi", "Ma"));
+        assertTrue(c1.itemIsFound("8507219173, Mario Samperi", "850721"));
+        assertFalse(c1.itemIsFound("3608021234, Federico Fellini", "Mario"));
             }
 }
 

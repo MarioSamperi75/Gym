@@ -9,15 +9,15 @@ import java.io.PrintWriter;
 public class Output {
 
     //INSTANSVARIABLER
-    int counterItems;
+    int counter;
     String status;
     String statusMessage;
     String trainingMessage;
 
 //----------------------------------------------------------------------------------
     //CONSTRUCTOR
-    public Output(int counterItems, String status, String statusMessage, String trainingMessage ){
-        this.counterItems = counterItems;
+    public Output(int counter, String status, String statusMessage, String trainingMessage ){
+        this.counter = counter;
         this.status = status;
         this.statusMessage = statusMessage;
         this.trainingMessage = trainingMessage;
@@ -28,7 +28,7 @@ public class Output {
     //INSTANSMETODER
     public void manageOutput()  {
 
-        switch (counterItems) {
+        switch (counter) {
 
             case 0:                     //INGEN motsvarande kund
                 JOptionPane.showMessageDialog(null, "Kunden hittades inte\n" + status);
@@ -47,11 +47,11 @@ public class Output {
                 (new FileWriter("src\\se\\nackademin\\trainingRegister.txt",true)))){
             if (status.equals("Före detta kund"))                   //före detta kund
                 JOptionPane.showMessageDialog(null,
-                        counterItems + " item hittades\n" + statusMessage + "\n");
+                        counter + " item hittades\n" + statusMessage + "\n");
             else {                                                  //nuvarande medelm
                 writer.write(trainingMessage); writer.flush();
                 JOptionPane.showMessageDialog(null,
-                        counterItems + " item hittades\n" +
+                        counter + " item hittades\n" +
                                 statusMessage + "\nNärvaro registreras automatiskt");
 
             }
@@ -65,7 +65,7 @@ public class Output {
 
     public void printManyClients(){
         JOptionPane.showMessageDialog(null,
-                counterItems + " items hittades\n" + statusMessage +
+                counter + " items hittades\n" + statusMessage +
                         "\nINGEN närvaro registreras\n(Ange fullständiga uppgifter)");
 
     }
